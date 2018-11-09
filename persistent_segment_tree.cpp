@@ -9,6 +9,8 @@
 using namespace std;
 #define MAX_INT 100000
 
+int space_count=0;
+
 struct seg_tree{
 	int value;
 	struct seg_tree *left,* right;
@@ -35,6 +37,7 @@ seg_tree * create_node(int data){
 	seg_tree *temp =(seg_tree *)malloc(sizeof(struct seg_tree));
 	temp->left=temp->right=NULL;
 	temp->value=data;
+	space_count++;
 	return temp;
 }
 
@@ -127,6 +130,9 @@ bool version_checker(int &v , int size){
 }
 
 int main(){
+	clock_t t;
+  	//int f;
+  	t = clock(); 
 	int n;
 	cout<<"Enter number of elements in array\n";
 	cin>>n;
@@ -203,6 +209,8 @@ int main(){
 			break;
 		}
 	}
+	t = clock() - t;
+  	printf ("It took me %d clicks (%f seconds).\n",t,((float)t)/CLOCKS_PER_SEC);
+	cout<<"Space used by program is :"<<space_count*sizeof(seg_tree)<<"\n";
 	return 0;
-
 }

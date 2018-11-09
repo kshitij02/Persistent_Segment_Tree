@@ -1,7 +1,7 @@
 #include<iostream>
 #include <bits/stdc++.h>
 using namespace std;
-
+int space_counter=0;
 struct seg_tree{
 	int value;
 	struct seg_tree *left,* right;
@@ -10,6 +10,7 @@ seg_tree * create_node(int data){
 	seg_tree *temp =(seg_tree *)malloc(sizeof(struct seg_tree));
 	temp->left=temp->right=NULL;
 	temp->value=data;
+	space_counter++;
 	return temp;
 }
 seg_tree * insert_value(int arr[],int i ,int j){
@@ -93,6 +94,11 @@ void traversal(seg_tree * root){
 int main(){
 	ios_base::sync_with_stdio(0);
 	std::vector<int> v;
+	clock_t t;
+  	//int f;
+  	t = clock(); 
+
+	
 	int n,q;
 	// cout<<"Enter number of elements in array\n";
 	cin>>n>>q;
@@ -117,5 +123,8 @@ int main(){
 		int x=knum(root[j],root[i-1],0,n-1,k);
 		cout<<v[x]<<endl;
 	}
+	t = clock() - t;
+  	printf ("It took me %d clicks (%f seconds).\n",t,((float)t)/CLOCKS_PER_SEC);
+  	printf("Program took this %d space\n",sizeof(seg_tree)*space_counter);
 	return 0;
 }
