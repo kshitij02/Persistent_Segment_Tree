@@ -209,7 +209,7 @@ int main(){
 			//arr[l]=value;
 			arr_version.push_back(temp);
 			seg_tree * next_root=insert(temp1,n,functocall);
-			traversal(next_root);
+			//traversal(next_root);
 			version_list.push_back(next_root);
 			}
 			else{

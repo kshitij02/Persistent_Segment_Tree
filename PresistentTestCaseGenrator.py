@@ -1,8 +1,8 @@
 import random
 
 # n = number of integers you want to generate, x ** y denotes x^y
-n =10**5
-q=t=u = 10**2
+n =10**3
+u = 10**2
 # minimum and maximum possible value of random number generated
 minn = 1
 maxx = 10 ** 7
@@ -21,13 +21,13 @@ while l:
 print "max"
 # print "q value"
 for i in range(u):
-	print "u "+str(i)+" "+str(i)+" "+ str(random.randint(minn, maxx))
+	print "u "+str(i)+" "+str(random.randint(0, n-1))+" "+ str(random.randint(minn, maxx))
 
-for i in range(t):
-	print "t "+str(i)
-for i in range(q):
-	x=(random.randint(0,n-2))
-	y=(random.randint(x+1,n-1))
-	print "q "+str(i)+" "+str(x)+" "+str(y)
+# for i in range(t):
+# 	print "t "+str(i)
+# for i in range(q):
+# 	x=(random.randint(0,n-2))
+# 	y=(random.randint(x+1,n-1))
+# 	print "q "+str(i)+" "+str(x)+" "+str(y)
 
 print "e"

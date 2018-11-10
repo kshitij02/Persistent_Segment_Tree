@@ -190,7 +190,7 @@ int main(){
 			r=l;
 			if(l<n&& l>=0){
 			seg_tree * next_root=update_seg(value,l,r,0,n-1,version_list[v],functocall);
-			traversal(next_root);
+			//traversal(next_root);
 			version_list.push_back(next_root);
 			}
 			else{
