@@ -9,7 +9,8 @@
 using namespace std;
 #define MAX_INT 100000
 
-int space_count=0;
+unsigned long long int space_count=0;
+
 
 struct seg_tree{
 	int value;
