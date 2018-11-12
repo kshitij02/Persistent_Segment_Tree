@@ -62,6 +62,7 @@ seg_tree *insert(int arr[],int arr_size,int (*functocall)(int,int)){
  	return root;
 
 }
+
 seg_tree *update_seg(int value,int l ,int r,int i ,int j
 	,seg_tree * previous_root,int (*functocall)(int ,int )){ 
  	seg_tree * node,* left , * right;

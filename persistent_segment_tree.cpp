@@ -15,6 +15,7 @@ struct seg_tree{
 	int value;
 	struct seg_tree *left,* right;
 };
+
 int sum (int a, int b)
 { 
 	return a+b; 
@@ -143,6 +144,7 @@ int main(){
 	cout<<"Enter Operation for Segment Tree \n# sum \n# min \n# max\n";
 	string operationToPreform;
 	cin>>operationToPreform;
+	
 	int (*functocall)(int ,int);
 	if(operationToPreform.compare("sum")==0){
 		functocall=sum;
@@ -157,6 +159,7 @@ int main(){
 		cout<<"Invalid Operation\n";
 		exit(0);
 	}
+	
 	vector<seg_tree *> version_list;
 	seg_tree *root=insert(arr,n,functocall);
 	traversal(root);

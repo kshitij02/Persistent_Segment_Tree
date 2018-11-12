@@ -28,6 +28,7 @@ seg_tree * insert_value(int arr[],int i ,int j){
 	node->right=right;
 	return node;
 }
+
 seg_tree * update_seg(int value,int index ,int i ,int j,seg_tree * previous_root){ 
  	seg_tree * node,* left , * right;
  	node=(seg_tree *)malloc(sizeof(struct seg_tree));
@@ -54,6 +55,7 @@ seg_tree * update_seg(int value,int index ,int i ,int j,seg_tree * previous_root
 	node->right=right;
 	return node;
 }
+
 vector< seg_tree * > insert(int arr[],std::vector<int> v,int arr_size){
 	int count[arr_size]={};
 	int index=0;
@@ -77,12 +79,12 @@ int knum(seg_tree * root1,seg_tree * root2,int i,int j,int k){
 	int mid=(i+j)/2;
 	int val=(root1->left->value-root2->left->value);
 	if(val>=k){
-		// cout<<"left "<<i<<" "<<j<<" "<<root->value<<" "<<k<<endl;
 		return knum(root1->left,root2->left,i,mid,k);
 	}
-	// cout<<"right "<<i<<" "<<j<<" "<<root->value<<" "<<k-(root->left->value)<<endl;
 	return knum(root1->right,root2->right,mid+1,j,k-val);
 }
+
+
 void traversal(seg_tree * root){
 	if(root->left!=NULL && root->right!=NULL){
 		traversal(root->left);
